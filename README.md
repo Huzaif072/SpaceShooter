@@ -1,10 +1,10 @@
-# 🚀 SpaceShooter
+# SpaceShooter
 
 A fully-featured **3-level space shooter** built with **C++ and SFML 2** for macOS, developed as a Semester 2 OOP project.
 
 ---
 
-## 🎮 Gameplay
+## Gameplay
 
 | Feature | Details |
 |---|---|
@@ -13,22 +13,22 @@ A fully-featured **3-level space shooter** built with **C++ and SFML 2** for mac
 | **Boss enemies** | Monster (mechanical orb) and Dragon — spawn between phases |
 | **Player ship** | Moves in all 4 directions, wraps horizontally |
 | **Weapons** | Normal laser, 7-way spread (power-up), fire-mode green laser |
-| **Power-ups** | ⚡ Power Up, 🌟 Fire Mode, 💊 Extra Life, ☠️ Danger (avoid!) |
+| **Power-ups** | Power Up, Fire Mode, Extra Life, Danger (avoid!) |
 | **Scoring** | Points scale per level; high-score leaderboard with GOLD/SILVER/BRONZE badges |
 
-## ✨ Visual Features
+## Visual Features
 
-- 🌌 Milky Way galaxy background
-- 🪐 18 rotating meteors drifting in the background
-- 💥 Explosion animations on every kill
-- 🔴 Screen-flash hit indicator
-- 🛡️ Pulsing shield overlay during Power-Up
-- 🎬 Per-level animated announcement screen (particle burst, pulsing rings, subtitle slide)
-- 🖥️ Glassmorphism HUD — score, timer, level/phase, life icons, badge
+- Milky Way galaxy background
+- 18 rotating meteors drifting in the background
+- Explosion animations on every kill
+- Screen-flash hit indicator
+- Pulsing shield overlay during Power-Up
+- Per-level animated announcement screen (particle burst, pulsing rings, subtitle slide)
+- Glassmorphism HUD — score, timer, level/phase, life icons, badge
 
 ---
 
-## 🕹️ Controls
+## Controls
 
 | Key | Action |
 |---|---|
@@ -38,7 +38,7 @@ A fully-featured **3-level space shooter** built with **C++ and SFML 2** for mac
 
 ---
 
-## 🛠️ Building (macOS)
+## Building (macOS)
 
 ### Prerequisites
 
@@ -57,7 +57,7 @@ This compiles the game and launches `SpaceShooter.app`.
 
 ---
 
-## 📁 Project Structure
+## Project Structure
 
 ```
 Spaceshooter/
@@ -97,7 +97,7 @@ Spaceshooter/
 
 ---
 
-## 🏗️ Architecture
+## Architecture
 
 The game uses an **OOP design** with the following key classes:
 
@@ -111,6 +111,6 @@ All movement is **delta-time based** for frame-rate independence.
 
 ---
 
-## 📜 License
+## License
 
 MIT — free to use and modify for educational purposes.

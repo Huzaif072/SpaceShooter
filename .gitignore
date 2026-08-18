@@ -1,0 +1,32 @@
+# ── Build artifacts ────────────────────────────────────────────────────
+*.o
+sfml-app
+main.o
+
+# ── macOS app bundle ────────────────────────────────────────────────────
+SpaceShooter.app/
+
+# ── macOS system files ─────────────────────────────────────────────────
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+ehthumbs.db
+Thumbs.db
+
+# ── Editor configs ─────────────────────────────────────────────────────
+.vscode/
+*.swp
+*.swo
+
+# ── Game runtime data ──────────────────────────────────────────────────
+highscores.txt
+
+# ── Fonts: exclude the 371 MB pack, keep only the one used by the game ─
+Fonts/*
+!Fonts/ariblk.ttf
+
+# ── PDFs (project docs — optional to include) ──────────────────────────
+# OOP Project.pdf
+# OOP Project Self Evaluation Sheet.pdf

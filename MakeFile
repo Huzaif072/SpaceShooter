@@ -1,0 +1,35 @@
+SFML2       = /usr/local/opt/sfml@2
+CXX         = clang++
+CXXFLAGS    = -std=c++17 -I$(SFML2)/include
+LDFLAGS     = -L$(SFML2)/lib -lsfml-graphics -lsfml-window -lsfml-system -lsfml-audio \
+              -Wl,-rpath,$(SFML2)/lib
+
+APP_NAME    = SpaceShooter
+BUNDLE      = $(APP_NAME).app
+BUNDLE_MACOS  = $(BUNDLE)/Contents/MacOS
+BUNDLE_RES    = $(BUNDLE)/Contents/Resources
+
+all: compile link
+
+compile:
+	$(CXX) $(CXXFLAGS) -c coding/main.cpp -o main.o
+
+link:
+	$(CXX) main.o -o sfml-app $(LDFLAGS)
+
+# Build a proper macOS .app bundle so keyboard works
+bundle: all
+	@echo "==> Building .app bundle..."
+	@rm -rf $(BUNDLE)
+	@mkdir -p $(BUNDLE_MACOS) $(BUNDLE_RES)
+	@cp Info.plist $(BUNDLE)/Contents/
+	@cp sfml-app $(BUNDLE_MACOS)/SpaceShooterBin
+	@# Launcher script: cd to project root so img/ and Fonts/ paths resolve
+	@printf '#!/bin/bash\nSCRIPT="$$(cd "$$(dirname "$$0")" && pwd)"\nPROJECT="$$(cd "$$SCRIPT/../../../" && pwd)"\ncd "$$PROJECT"\nexec "$$SCRIPT/SpaceShooterBin"\n' > $(BUNDLE_MACOS)/$(APP_NAME)
+	@chmod +x $(BUNDLE_MACOS)/$(APP_NAME)
+	@echo "==> Done! Running $(BUNDLE)..."
+	@open $(BUNDLE)
+
+clean:
+	rm -f main.o sfml-app
+	rm -rf $(BUNDLE)
